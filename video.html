@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Galeri Video - Vito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        /* Efek Background Parallax */
+        .cyberpunk-bg {
+            background: linear-gradient(270deg, #ff00ff, #00ffff, #ff00ffff);
+            background-size: 600% 600%;
+            animation: gradientMove 10s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efek Fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="cyberpunk-bg text-white flex flex-col items-center justify-center min-h-screen">
+    <nav class="w-full bg-gray-900 p-4 fixed top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white hover:text-yellow-400">Home</a>
+            <a href="galeri.html" class="text-white hover:text-yellow-400">Galeri Foto</a>
+            <a href="profil.html" class="text-white hover:text-yellow-400">Profil Pribadi</a>
+        </div>
+    </nav>
+
+    <section class="p-8 fade-in mt-16">
+        <h2 class="text-3xl font-bold">Galeri Video</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+            <video src="videos/video1.mp4" class="w-48 h-36" controls></video>
+            <video src="videos/video2.mp4" class="w-48 h-36" controls></video>
+            <video src="videos/video3.mp4" class="w-48 h-36" controls></video>
+            <!-- Tambahkan video lainnya di sini -->
+        </div>
+    </section>
+
+    <!-- Kontrol Musik di sini -->
+       <audio id="backgroundMusik" preload="auto" loop>
+    <source src="musik/rema.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<div class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4 flex justify-around items-center z-10">
+    <button id="playMusik" class="p-2 bg-green-500 text-white rounded hover:bg-green-600" aria-label="Play or pause music">
+        Play 🎵
+    </button>
+    <button id="stopMusik" class="p-2 bg-red-500 text-white rounded hover:bg-red-600" aria-label="Stop music">
+        Stop 🖐🏻
+    </button>
+</div>
+<script src="musik.js"></script>
+<!-- Pastikan musik.js dimuat -->
+    </body>
+
+    <script>
+       
+        // Efek Fade-in saat Scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeInElements = document.querySelectorAll(".fade-in");
+            function checkScroll() {
+                fadeInElements.forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("active");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+    </script>
+</body>
+</html>

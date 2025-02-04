@@ -39,8 +39,8 @@
     </style>
 </head>
 <body class="cyberpunk-bg text-white flex flex-col items-center justify-center min-h-screen">
-<<<<<<< HEAD
-       <nav class="w-full bg-gray-900 p-4 fixed top-0 z-10">
+    <!-- Navbar -->
+    <nav class="w-full bg-gray-900 p-4 fixed top-0 z-10">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <img alt="Logo Vito" class="w-10 h-10 mr-2 rounded-full" src="images/alws.jpg"/>
@@ -57,31 +57,6 @@
                     <i class="fas fa-video"></i> Galeri Video
                 </a>
             </div>
-=======
-       <!-- Menambahkan musik latar -->
-   <audio id="backgroundMusik" preload="auto">
-    <source src="musik/rema.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<div class="flex space-x-4 mt-4">
-    <button id="playMusik" class="p-2 bg-green-500 text-white rounded hover:bg-green-600">
-        Play 🎵
-    </button>
-
-    <button id="stopMusik" class="p-2 bg-red-500 text-white rounded hover:bg-red-600">
-        Stop 🖐🏻
-    </button>
-</div>
-
-    <!-- Navbar -->
-    <nav class="w-full bg-gray-900 p-4 fixed top-0 z-10">
-    <div class="container mx-auto flex justify-between items-center">
-        <div class="flex items-center">
-            <!-- Logo Bulat -->
-            <img alt="Logo Vito" class="w-10 h-10 mr-2 rounded-full" height="40" src="images/alws.jpg" width="200"/>
-            <div class="text-2xl font-bold text-yellow-400">VITO LIASIANO</div>
->>>>>>> d7289be4ca69ab36eab03e2bdcb3d9ac36433484
         </div>
     </nav>
 
@@ -90,146 +65,43 @@
         <p class="text-lg mb-6">Jelajahi foto kenangan pengalaman yang luar biasa!</p>
     </section>
 
-    <script>
-        // Efek Fade-in saat Scroll
-        document.addEventListener("DOMContentLoaded", function () {
-            const fadeInElements = document.querySelectorAll(".fade-in");
-            function checkScroll() {
-                fadeInElements.forEach((el) => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 50) {
-                        el.classList.add("active");
-                    }
-                });
-            }
-            window.addEventListener("scroll", checkScroll);
-            checkScroll(); // Panggil fungsi untuk menambahkan kelas aktif saat halaman dimuat
-        });
-    </script>
-
-    <!-- footer.html atau header.html -->
+    <!-- Musik Latar -->
     <audio id="backgroundMusik" preload="auto" loop>
-    <source src="musik/rema.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-<div class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4 flex justify-around items-center z-10">
-    <button id="playMusik" class="p-2 bg-green-500 text-white rounded hover:bg-green-600" aria-label="Play or pause music">
-        Play 🎵
-    </button>
-    <button id="stopMusik" class="p-2 bg-red-500 text-white rounded hover:bg-red-600" aria-label="Stop music">
-        Stop 🖐🏻
-    </button>
-</div>
-<script src="musik.js"></script>
- <!-- Menambahkan file musik.js -->
+        <source src="musik/rema.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
+    <div class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4 flex justify-around items-center z-10">
+        <button id="playMusik" class="p-2 bg-green-500 text-white rounded hover:bg-green-600" aria-label="Play or pause music">
+            Play 🎵
+        </button>
+        <button id="stopMusik" class="p-2 bg-red-500 text-white rounded hover:bg-red-600" aria-label="Stop music">
+            Stop 🖐🏻
+        </button>
+    </div>
 
-<<<<<<< HEAD
     <script>
-            document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             const audio = document.getElementById("backgroundMusik");
-=======
-            const videoSizeRange = document.getElementById("videoSizeRange");
-            const videoContainers = document.querySelectorAll(".video-container");
-
-            function updateVideoSize() {
-                let size = videoSizeRange.value;
-                videoContainers.forEach(container => {
-                    container.style.width = `${size}px`;
-                });
-            }
-
-            videoSizeRange.addEventListener("input", updateVideoSize);
-            updateVideoSize();
-
-            // Tampilkan Galeri Foto saat diklik
-            document.getElementById("galeriFoto").addEventListener("click", function() {
-                document.getElementById("homeSection").classList.add("hidden");
-                document.getElementById("galeriFotoSection").classList.remove("hidden");
-                document.getElementById("profilPribadiSection").classList.add("hidden");
-            });
-
-            // Tampilkan Profil Pribadi saat diklik
-            document.getElementById("profilPribadi").addEventListener("click", function() {
-                document.getElementById("homeSection").classList.add("hidden");
-                document.getElementById("profilPribadiSection").classList.remove("hidden");
-                document.getElementById("galeriFotoSection").classList.add("hidden");
-            });
-
-            // Kembali ke Home dari Galeri Foto
-            document.getElementById("backToHomeFromGallery").addEventListener("click", function() {
-                document.getElementById("homeSection").classList.remove("hidden");
-                document.getElementById("galeriFotoSection").classList.add("hidden");
-            });
-
-            // Kembali ke Home dari Profil Pribadi
-            document.getElementById("backToHomeFromProfile").addEventListener("click", function() {
-                document.getElementById("homeSection").classList.remove("hidden");
-                document.getElementById("profilPribadiSection").classList.add("hidden");
-            });
-
-            // Logout
-            document.getElementById("logout").addEventListener("click", function() {
-                alert("Anda telah logout.");
-                // Tambahkan logika logout di sini
-            });
-
->>>>>>> d7289be4ca69ab36eab03e2bdcb3d9ac36433484
             const playButton = document.getElementById("playMusik");
             const stopButton = document.getElementById("stopMusik");
 
-<<<<<<< HEAD
-            // Memeriksa status musik dari localStorage
-            const isPlaying = localStorage.getItem("isPlaying") === "true";
-
-            // Jika musik seharusnya diputar, mulai pemutaran
-            if (isPlaying) {
-                audio.play();
-                playButton.textContent = "Pause Music";
-            }
-
-            // Menangani aksi play/pause
             playButton.addEventListener("click", function () {
                 if (audio.paused) {
                     audio.play();
                     playButton.textContent = "Pause Music";
-                    localStorage.setItem("isPlaying", "true");
                 } else {
                     audio.pause();
                     playButton.textContent = "Play Music";
-                    localStorage.setItem("isPlaying", "false");
                 }
             });
 
-            // Menangani aksi stop (reset musik)
             stopButton.addEventListener("click", function () {
                 audio.pause();
                 audio.currentTime = 0;
                 playButton.textContent = "Play Music";
-                localStorage.setItem("isPlaying", "false");
             });
         });
-=======
-            playButton.addEventListener("click", function() {
-               if (audio.paused) {
-                audio.play();
-            playButton.textContent = "Pause Music";
-             } else {
-             audio.pause();
-              playButton.textContent = "Play Music";
-            }
-           });
-
-            stopButton.addEventListener("click", function() {
-              audio.pause();
-              audio.currentTime = 0;
-              playButton.textContent = "Play Music";
-           });
-        
-         });
     </script>
->>>>>>> d7289be4ca69ab36eab03e2bdcb3d9ac36433484
-
-     </script>
 </body>
 </html>
